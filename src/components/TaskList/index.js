@@ -1,9 +1,9 @@
 import List from "./List";
 
-const Tasks = () => {
+const Tasks = ({tasks}) => {
     return (
         <div className="tasks">
-            <List/>
+            <List tasks = {tasks}/>
         </div>
     )
 }

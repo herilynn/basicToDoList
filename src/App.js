@@ -2,7 +2,16 @@
 import './App.css';
 import Header from './components/Header';
 import Tasks from './components/TaskList';
+
 function App() {
+
+  const tasks = [
+    {name: 'test1',
+    time: 'test2',
+  complete: 'no'}
+
+  ]
+
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -20,7 +29,7 @@ function App() {
         </a>
       </header> */}
       <Header/>
-      <Tasks/>
+      <Tasks tasks={tasks}/>
     </div>
   );
 }
