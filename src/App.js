@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
-
+import Tasks from './components/TaskList';
 function App() {
   return (
     <div className="App">
@@ -20,6 +20,7 @@ function App() {
         </a>
       </header> */}
       <Header/>
+      <Tasks/>
     </div>
   );
 }

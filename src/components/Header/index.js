@@ -2,7 +2,9 @@ import HeaderBar from "./Header";
 
 const Header = () => {
 
-    return <HeaderBar/>
+    return (
+        <HeaderBar/>
+    )
 
 }
 
