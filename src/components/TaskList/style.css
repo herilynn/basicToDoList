@@ -49,12 +49,18 @@
     color: rgba(255, 0, 0, 0.500)
 }
 
-.task.complete {
+/* .task.complete {
     text-decoration: line-through;
     color: red;
 }
 
 .task.complete {
+    text-decoration: line-through;
+    color: red;
+} */
+
+.task.complete .task-name,
+.task.complete .task-time {
     text-decoration: line-through;
     color: red;
 }
