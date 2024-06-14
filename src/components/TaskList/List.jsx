@@ -5,12 +5,12 @@ const List = ({tasks}) => {
         <div className="list">
 
             {
-                tasks.map(({name, time, complete}) => (
+                tasks.map(({name, time}) => (
                 
                     <Task
                         name = {name}
                         time = {time}
-                        complete={complete}
+                        // complete={complete}
                     />))
             }
 
