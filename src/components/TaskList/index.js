@@ -1,4 +1,5 @@
 import List from "./List";
+import './style.css';
 
 const Tasks = ({tasks}) => {
     return (

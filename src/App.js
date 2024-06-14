@@ -6,9 +6,9 @@ import Tasks from './components/TaskList';
 function App() {
 
   const tasks = [
-    {name: 'test1',
-    time: 'test2',
-  complete: 'no'}
+    {name: 'test1', time: 'test2', complete: 'no'},
+    {name: 'test1', time: 'test2', complete: 'no'},
+    {name: 'test1', time: 'test2', complete: 'no'}
 
   ]
 

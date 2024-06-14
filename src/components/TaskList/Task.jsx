@@ -5,7 +5,7 @@ const Task = ({name, time, complete}) => {
             <div className="task-name">{name}</div>
             <div className="task-time">{time}</div>
             <div className="completion">{complete}</div>
-            <button type="submit">Delete</button>
+            <button type="submit">Remove</button>
         </div>
     )
 }

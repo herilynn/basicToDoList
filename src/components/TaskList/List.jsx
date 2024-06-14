@@ -8,9 +8,9 @@ const List = ({tasks}) => {
                 tasks.map(({name, time, complete}) => (
                 
                     <Task
-                    name = {name}
-                    time = {time}
-                    complete={complete}
+                        name = {name}
+                        time = {time}
+                        complete={complete}
                     />))
             }
 
