@@ -2,15 +2,22 @@
 import './App.css';
 import Header from './components/Header';
 import Tasks from './components/TaskList';
+import { useState } from 'react';
 
 function App() {
 
   const tasks = [
-    {name: 'test1', time: 'test2', complete: 'no'},
-    {name: 'test1', time: 'test2', complete: 'no'},
-    {name: 'test1', time: 'test2', complete: 'no'}
-
+    {name: 'test1', time: 'test2', complete: 'no', id: '1'},
+    {name: 'test1', time: 'test2', complete: 'no', id: '2'},
+    {name: 'test1', time: 'test2', complete: 'no', id: '3'}
   ]
+
+  const [allTasks, setAllTasks] = useState(tasks)
+
+  const removeTask = (id) => {
+    const updatedTasks = allTasks.filter(item => item.id !== id)
+    setAllTasks(updatedTasks)
+  }
 
   return (
     <div className="App">
@@ -29,7 +36,7 @@ function App() {
         </a>
       </header> */}
       <Header/>
-      <Tasks tasks={tasks}/>
+      <Tasks tasks={allTasks} onRemoveHandler = {removeTask}/>
     </div>
   );
 }

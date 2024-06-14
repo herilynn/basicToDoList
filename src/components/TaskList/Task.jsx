@@ -1,6 +1,10 @@
 import React, {useState} from "react"
 
-const Task = ({name, time, id}) => {
+const Task = ({name, time, id, onRemoveHandler}) => {
+
+    const RemoveHandler = () => {
+        onRemoveHandler(id)
+    }
 
     const [isChecked, setIsChecked] = useState(false)
 
@@ -22,7 +26,7 @@ const Task = ({name, time, id}) => {
                 <div className="task-name">{name}</div>
                 <div className="task-time">{time}</div>
             </div>
-            <button type="submit">Remove</button>
+            <button type="submit" onClick={RemoveHandler}>Remove</button>
         </div>
     )
 }

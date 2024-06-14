@@ -1,15 +1,17 @@
 import Task from "./Task";
 
-const List = ({tasks}) => {
+const List = ({tasks, onRemoveHandler}) => {
     return (
         <div className="list">
 
             {
-                tasks.map(({name, time}) => (
+                tasks.map(({name, time, id}) => (
                 
                     <Task
                         name = {name}
                         time = {time}
+                        id = {id}
+                        onRemoveHandler = {onRemoveHandler}
                         // complete={complete}
                     />))
             }
