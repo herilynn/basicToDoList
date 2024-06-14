@@ -2,6 +2,7 @@
 import './App.css';
 import Header from './components/Header';
 import Tasks from './components/TaskList';
+import NewTask from './components/AddTask';
 import { useState } from 'react';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         </a>
       </header> */}
       <Header/>
+      <NewTask/>
       <Tasks tasks={allTasks} onRemoveHandler = {removeTask}/>
     </div>
   );
