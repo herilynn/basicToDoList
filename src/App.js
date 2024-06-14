@@ -8,18 +8,30 @@ import { useState } from 'react';
 function App() {
 
   const tasks = [
-    {name: 'test1', time: new Date('2024-06-30T09:31:00'), complete: 'no', id: '1'},
-    {name: 'test1', time: new Date('2024-06-30T09:30:00'), complete: 'no', id: '2'},
-    {name: 'test1', time: new Date('2024-06-30T09:33:00'), complete: 'no', id: '3'}
+    {name: 'test1', time: new Date('2024-06-30T09:31:00'), id: '1'},
+    {name: 'test1', time: new Date('2024-06-30T09:30:00'), id: '2'},
+    {name: 'test1', time: new Date('2024-06-30T09:33:00'), id: '3'}
 ];
 
-  tasks.sort((a, b) => a.time - b.time)
+  tasks.sort((a, b) => a.time.getTime() - b.time.getTime())
 
 
   const [allTasks, setAllTasks] = useState(tasks)
 
   const removeTask = (id) => {
     const updatedTasks = allTasks.filter(item => item.id !== id)
+    setAllTasks(updatedTasks)
+  }
+
+  const addTask = (newTaskData) => {
+    const updatedTasks = [...allTasks]
+
+    const indexPos = updatedTasks.findIndex(task => task.time > newTaskData.time)
+
+    const insertIndex = indexPos !== -1 ? indexPos : updatedTasks.length
+
+    updatedTasks.splice(insertIndex, 0, newTaskData) //0 needed when adding for splice or it would just remove the inserted
+
     setAllTasks(updatedTasks)
   }
 
@@ -40,7 +52,7 @@ function App() {
         </a>
       </header> */}
       <Header/>
-      <NewTask/>
+      <NewTask onAddTask = {addTask}/>
       <Tasks tasks={allTasks} onRemoveHandler = {removeTask}/>
     </div>
   );

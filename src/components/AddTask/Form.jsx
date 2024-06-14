@@ -1,9 +1,16 @@
-const Form = () => {
+const Form = ({onAddTask}) => {
 
     const addTaskHandler = (event) => {
+
+        event.preventDefault() //to avoid refreshing to see form components
+
+        const taskName = event.target[0].value 
+        const taskTime = event.target[1].value 
+
+        onAddTask(taskName, taskTime)
      
-        // event.target[0].value = ''
-        // event.target[1].value = ''
+        event.target[0].value = '' //to reset task
+        event.target[1].value = '' //to reset time
     }
 
     return (

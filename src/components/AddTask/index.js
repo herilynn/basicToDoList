@@ -1,11 +1,18 @@
 import Form from "./Form";
 import './style.css'
 
-const NewTask = () => {
-    
+const NewTask = ({onAddTask}) => {
+
+    const addTaskHandler = (taskName, taskTime) => {
+
+        const addTask = {name: taskName, time:taskTime, id: Math.random()} 
+        
+        onAddTask(addTask)
+    }
+
     return (
         <div className="new-task">
-            <Form/>
+            <Form onAddTask = {addTaskHandler}/>
         </div>
     )
 }
