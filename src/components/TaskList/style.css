@@ -32,10 +32,6 @@
     margin: 0 20px;
 }
 
-.completion {
-    margin: 0 20px;
-}
-
 .task button {
     margin-left: auto;
     color: whitesmoke;
@@ -51,4 +47,16 @@
 
 .task:hover {
     color: rgba(255, 0, 0, 0.500)
+}
+
+.task.complete .task-name {
+    text-decoration: line-through;
+}
+
+.task.task.complete .task-time {
+    text-decoration: line-through;
+}
+
+.task.task.complete .task {
+    background-color: green;
 }
