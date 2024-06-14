@@ -16,6 +16,8 @@ const Task = ({name, time, id, onRemoveHandler}) => {
         
     }
 
+    const formattedTime = new Date(time).toLocaleTimeString()
+
     return (
         <div className={`task ${isChecked ? "complete" : ""}`}>
             <label>
@@ -24,7 +26,7 @@ const Task = ({name, time, id, onRemoveHandler}) => {
             </label>
             <div>
                 <div className="task-name">{name}</div>
-                <div className="task-time">{time}</div>
+                <div className="task-time">{formattedTime}</div>
             </div>
             <button type="submit" onClick={RemoveHandler}>Remove</button>
         </div>

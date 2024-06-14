@@ -7,10 +7,13 @@ import { useState } from 'react';
 function App() {
 
   const tasks = [
-    {name: 'test1', time: 'test2', complete: 'no', id: '1'},
-    {name: 'test1', time: 'test2', complete: 'no', id: '2'},
-    {name: 'test1', time: 'test2', complete: 'no', id: '3'}
-  ]
+    {name: 'test1', time: new Date('2024-06-30T09:31:00'), complete: 'no', id: '1'},
+    {name: 'test1', time: new Date('2024-06-30T09:30:00'), complete: 'no', id: '2'},
+    {name: 'test1', time: new Date('2024-06-30T09:33:00'), complete: 'no', id: '3'}
+];
+
+  tasks.sort((a, b) => a.time - b.time)
+
 
   const [allTasks, setAllTasks] = useState(tasks)
 
