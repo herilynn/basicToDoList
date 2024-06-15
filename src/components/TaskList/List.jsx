@@ -12,7 +12,6 @@ const List = ({tasks, onRemoveHandler}) => {
                         name = {name}
                         time = {time}
                         id = {id}
-                        // isChecked={isChecked}
                         completed = {completed}
                         onRemoveHandler = {onRemoveHandler}
                     />))
