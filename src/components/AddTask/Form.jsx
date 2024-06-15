@@ -15,9 +15,9 @@ const Form = ({onAddTask}) => {
 
     return (
         <form action="" className="task-form" onSubmit={addTaskHandler}>
-            <input type="text" name="" id="" className="new-task-name" placeholder="Enter Task"/>
+            <input type="text" name="" id="" className="new-task-name" placeholder="Enter Task" required/>
 
-            <input type="datetime-local" name="" id="" className="new-task-time" placeholder="YYYY-MM-DD-THH-mm-ss"/>
+            <input type="datetime-local" name="" id="" className="new-task-time" placeholder="YYYY-MM-DD-THH-mm-ss" required/>
 
             <button type="submit"> Add Task </button>
         </form>

@@ -22,12 +22,11 @@ function App() {
   }
 
   const addTask = (newTaskData) => {
-    const updatedTasks = [...allTasks, newTaskData]
-
-    setAllTasks(updatedTasks)
-
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks))
-  }
+    const updatedTasks = [...allTasks, { ...newTaskData, completed: false }];
+    setAllTasks(updatedTasks);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  };
+  
 
   useEffect(() => {
     const sortedTasks = [...allTasks].sort((a, b) => {
