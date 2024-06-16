@@ -7,9 +7,9 @@ import { useState, useEffect } from 'react';
 function App() {
 
   const tasks = JSON.parse(localStorage.getItem('tasks')) || [
-    { name: 'test1', time: new Date('2024-06-30T09:31:00'), id: '1' },
-    { name: 'test1', time: new Date('2024-06-30T09:30:00'), id: '2' },
-    { name: 'test1', time: new Date('2024-06-30T09:33:00'), id: '3' }
+    { name: 'Technical Evaluation with JB&B', time: new Date('2024-06-16T23:59:00'), id: '1' },
+    { name: 'JB&B Offer Email!', time: new Date('2024-06-18T00:00:00'), id: '2' },
+    { name: 'Celebrate Getting Offer~', time: new Date('2024-06-21T19:30:00'), id: '3' }
   ];
 
   const [allTasks, setAllTasks] = useState(tasks)
