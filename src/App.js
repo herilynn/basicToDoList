@@ -30,32 +30,35 @@ function App() {
 
   useEffect(() => {
     const sortedTasks = [...allTasks].sort((a, b) => {
-      
-      return new Date(a.time).getTime() - new Date(b.time).getTime()
-    })
 
+      const timeComparison = new Date(a.time).getTime() - new Date(b.time).getTime();
+
+      if (timeComparison !== 0) {
+        return timeComparison;
+      }
+      return a.id - b.id; //in the case the times are the same; it would place new tasks that have earlier and later times in the correct position cause sorting would order by time first 
+    });
+  
     const tasksEqual = (task1, task2) => {
-      
       if (task1.length !== task2.length) {
-        return false
+        return false;
       }
-
+  
       for (let i = 0; i < task1.length; i++) {
-        
         if (task1[i].id !== task2[i].id) {
-          return false
+          return false;
         }
-
-        return true
       }
-    }
-
+  
+      return true;
+    };
+  
     if (!tasksEqual(allTasks, sortedTasks)) {
-      setAllTasks(sortedTasks)
+      setAllTasks(sortedTasks);
       localStorage.setItem('tasks', JSON.stringify(sortedTasks));
     }
-    
-  }, [allTasks])
+  }, [allTasks]);
+  
 
   return (
     <div className="App">
