@@ -31,7 +31,7 @@ const Task = ({name, time, id, completed, onRemoveHandler}) => {
                 <div className="task-name">{name}</div>
                 <div className="task-time">{formattedTime}</div>
             </div>
-            <button type="submit" onClick={RemoveHandler}>Remove</button>
+            <button data-testid = {`remove-button-${id}`} type="submit" onClick={RemoveHandler}>Remove</button>
         </div>
     )
 }

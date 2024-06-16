@@ -4,20 +4,20 @@ const Form = ({onAddTask}) => {
 
         event.preventDefault() //to avoid refreshing to see form components
 
-        const taskName = event.target[0].value 
-        const taskTime = event.target[1].value 
+        const taskName = event.target.elements['taskName'].value 
+        const taskTime = event.target.elements['taskTime'].value 
 
         onAddTask(taskName, taskTime)
      
-        event.target[0].value = '' //to reset task
-        event.target[1].value = '' //to reset time
+        event.target.elements['taskName'].value = '' //to reset task
+        event.target.elements['taskTime'].value = '' //to reset time
     }
 
     return (
-        <form action="" className="task-form" onSubmit={addTaskHandler}>
-            <input type="text" name="" id="" className="new-task-name" placeholder="Enter Task" required/>
+        <form className="task-form" data-testid="task-form" onSubmit={addTaskHandler}>
+            <input type="text" name="taskName" className="new-task-name" placeholder="Enter Task" required/>
 
-            <input type="datetime-local" name="" id="" className="new-task-time" placeholder="YYYY-MM-DD-THH-mm-ss" required/>
+            <input type="datetime-local" name="taskTime" className="new-task-time" placeholder="YYYY-MM-DD-THH-mm" required/>
 
             <button type="submit"> Add Task </button>
         </form>
