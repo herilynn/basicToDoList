@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto-Condensed', sans-serif;
+    font-weight: 600;
 }
 
 .task {
@@ -38,6 +40,8 @@
     background-color: slateblue;
     border-radius: 5px;
     transition: 0.2s ease;
+    font-family: 'Roboto-Condensed', sans-serif;
+    font-weight: 600;
 }
 
 .task button:hover {

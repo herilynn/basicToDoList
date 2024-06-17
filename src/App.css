@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.roboto-condensed- {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
